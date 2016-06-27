@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>Your Dose of NHL </title>
+		<script type = "text/javascript">
+			console.log("HI");
+			var picIndex = 0;
+			transition();
+			
+			/*
+			 * 2  default functions needed for function transition 
+			 *
+			 */
+			function transition(){
+				var i;
+				//getElementsByClassName gets all elements of the specified class name
+				var x = document.getElementsByClassName("mySlides"); 
+				
+				for (i = 0; i < x.length; i++) {
+				  
+					x[i].style.display = "none"; 
+				}
+				picIndex++;
+					
+				if (picIndex > x.length) {
+					picIndex = 1
+				}
+				x[picIndex - 1].style.display = "block"; 
+				//function changes image every 1 seconds
+				setTimeout(transition, 1000); 
+			}
+		
+		</script>
+	</head>
+	<style type = "text/css">
+		body{
+				background-size: 1300px 1000px; 
+			}
+	</style>
+	<body background = "../IMG/nhlbackground.png">
+		<img class = "mySlides" src="../IMG/sharks.png">
+		<img class = "mySlides" src="../IMG/kings.png"> 
+		<center>
+			<hr color = "yellow">
+			<p></p>
+	</body>
+</html>
